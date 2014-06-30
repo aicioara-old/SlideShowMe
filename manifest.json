@@ -1,0 +1,30 @@
+{
+	"manifest_version": 2,
+
+	"name": "SlideShowMe",
+	"description": "A chrome extension which let computers synchronize over links. Be social in your browser.",
+	"version": "1.0",
+
+	"permissions": [
+		"tabs", "http://*/*", "https://*/*"
+	],
+
+	"content_scripts": [
+	{
+		"matches": ["https://*/*", "http://*/*"],
+		"js": ["jquery.js", "contentScript.js"]
+	}
+	],
+
+	"background": {
+		"scripts": ["background.js"]
+	},
+
+	"web_accessible_resources": [
+		"icons/*.png"
+	],
+
+	"icons": { "16": "icon.png", "48": "icon.png", "128": "icon.png" }
+
+
+}
