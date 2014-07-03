@@ -1,1 +1,3 @@
-console.log('aa')
+chrome.tabs.executeScript(null, {
+	file: 'injection.js'
+});

@@ -6,7 +6,7 @@
 	"version": "1.0",
 
 	"permissions": [
-		"tabs", "http://*/*", "https://*/*"
+		"tabs", "activeTab", "http://*/*", "https://*/*"
 	],
 
 	"content_scripts": [
@@ -17,7 +17,8 @@
 	],
 
 	"background": {
-		"scripts": ["background.js"]
+		"scripts": ["background.js"],
+		"persistent" : false
 	},
 
 	"browser_action": {
