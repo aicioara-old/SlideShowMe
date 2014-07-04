@@ -29,6 +29,9 @@ onGuestSelected = function() {
 			path: "icon_blue.png",
 			tabId: id
 		}, function() {
+			chrome.tabs.executeScript(null, {
+				file: 'guestInjection.js'
+			});
 			window.close();
 		});
 
@@ -43,10 +46,11 @@ onHostSelected = function() {
 			path: "icon_green.png",
 			tabId: id
 		}, function() {
+			chrome.tabs.executeScript(null, {
+				file: 'hostInjection.js'
+			});
 			window.close();
-
 		});
-
 	});
 
 }
