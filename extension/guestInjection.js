@@ -1,7 +1,8 @@
 console.log('guest');
 
-var socket = io('http://127.0.0.1:3000');
+var socket = io('http://10.0.0.36:3000');
 
 socket.on('yournumber', function(s) {
-	console.log(s);
+	window.location = s;
+	// console.log("Broadcast message is: " + s);
 })
