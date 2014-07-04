@@ -1,0 +1,48 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Testing</title>
+</head>
+<body>
+
+
+
+
+<script src="jquery.js"></script>
+<!-- <script src="https://cdn.socket.io/socket.io-1.0.6.js"></script> -->
+<script src="socket.io-1.0.6.js"></script>
+
+
+<script>
+
+var number = 0;
+
+var socket = io('http://10.0.0.35:3000');
+
+var handler = setInterval(function() {
+	console.log(number);
+	socket.emit('mynumber', number);
+	number++;
+}, 1000)
+
+socket.on('yournumber', function(s) {
+	console.log(s);
+})
+
+// $.ajax({
+// 	url : "http://10.0.0.35:3000",
+// 	method : "post",
+// 	data : {
+// 		name : "hello"
+// 	},
+// 	success : function(response) {
+// 		console.log(response)
+// 	}
+// })
+
+</script>
+
+
+
+</body>
+</html>
