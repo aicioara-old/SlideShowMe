@@ -30,6 +30,9 @@ onGuestSelected = function() {
 			tabId: id
 		}, function() {
 			chrome.tabs.executeScript(null, {
+				file: 'socket.io-1.0.6.js'
+			});
+			chrome.tabs.executeScript(null, {
 				file: 'guestInjection.js'
 			});
 			window.close();
@@ -46,6 +49,9 @@ onHostSelected = function() {
 			path: "icon_green.png",
 			tabId: id
 		}, function() {
+			chrome.tabs.executeScript(null, {
+				file: 'socket.io-1.0.6.js'
+			});
 			chrome.tabs.executeScript(null, {
 				file: 'hostInjection.js'
 			});

@@ -70,7 +70,7 @@ io.on('connection', function(socket) {
         socket.broadcast.to(1993).emit('client_request', {url:'www.bing.com'});
     });
     socket.on('mynumber', function (msg) {
-        io.sockets.emit('yournumber', "Your number, " + msg + " is shit");
+        io.sockets.emit('yournumber', msg);
     });
 });
 
