@@ -26,7 +26,7 @@ onGuestSelected = function() {
 			tabId: tabId
 		}, function() {
 			chrome.tabs.executeScript(null, {
-				file: 'socket.io-1.0.6.js'
+				file: 'vendor/socket.io-1.0.6.js'
 			});
 			chrome.tabs.executeScript(null, {
 				file: 'guestInjection.js'
@@ -50,7 +50,7 @@ onHostSelected = function() {
 			tabId: tabId
 		}, function() {
 			chrome.tabs.executeScript(null, {
-				file: 'socket.io-1.0.6.js'
+				file: 'vendor/socket.io-1.0.6.js'
 			});
 			chrome.tabs.executeScript(null, {
 				file: 'hostInjection.js'
