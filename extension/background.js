@@ -1,6 +1,5 @@
 registredPages = {}
 
-
 chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
     if (changeInfo && changeInfo.status == "complete") {
 
@@ -17,10 +16,7 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
 				chrome.tabs.executeScript(null, {
 					file: 'hostInjection.js'
 				});
-
 			});
-
-
 
     	} else if (registredPages[tabId] === "guest") {
     		console.log("guest");
@@ -38,15 +34,6 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
 
 			});
 
-
-
-
     	}
-
-    	// console.log('asd')
-        // chrome.tabs.sendMessage(tabId, {data: tab}, function(response) {
-        //     console.log(response);
-        // });
-
     }
 });

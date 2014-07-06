@@ -1,7 +1,3 @@
-chrome.tabs.executeScript(null, {
-	file: 'injection.js'
-});
-
 var hostId = $("#host-id");
 hostId.val("12345245235475");
 hostId.click(function() {

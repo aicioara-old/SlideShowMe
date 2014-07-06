@@ -9,13 +9,6 @@
 		"tabs", "activeTab", "http://*/*", "https://*/*"
 	],
 
-	"content_scripts": [
-	{
-		"matches": ["https://*/*", "http://*/*"],
-		"js": ["jquery.js", "contentScript.js"]
-	}
-	],
-
 	"background": {
 		"scripts": ["background.js"],
 		"persistent" : false
