@@ -7,7 +7,7 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
     		console.log("host");
 
 			chrome.browserAction.setIcon({
-				path: "icon_green.png",
+				path: "icons/icon_green.png",
 				tabId: tabId
 			}, function() {
 				chrome.tabs.executeScript(null, {
@@ -22,7 +22,7 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
     		console.log("guest");
 
 			chrome.browserAction.setIcon({
-				path: "icon_blue.png",
+				path: "icons/icon_blue.png",
 				tabId: tabId
 			}, function() {
 				chrome.tabs.executeScript(null, {

@@ -22,7 +22,7 @@ onGuestSelected = function() {
 
 	getCurrentTab(function(tabId) {
 		chrome.browserAction.setIcon({
-			path: "icon_blue.png",
+			path: "icons/icon_blue.png",
 			tabId: tabId
 		}, function() {
 			chrome.tabs.executeScript(null, {
@@ -46,7 +46,7 @@ onHostSelected = function() {
 
 	getCurrentTab(function(tabId) {
 		chrome.browserAction.setIcon({
-			path: "icon_green.png",
+			path: "icons/icon_green.png",
 			tabId: tabId
 		}, function() {
 			chrome.tabs.executeScript(null, {
