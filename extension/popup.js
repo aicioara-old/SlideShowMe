@@ -24,10 +24,10 @@ guestButton.click(function() {
 
 onGuestSelected = function() {
 
-	getCurrentTab(function(id) {
+	getCurrentTab(function(tabId) {
 		chrome.browserAction.setIcon({
 			path: "icon_blue.png",
-			tabId: id
+			tabId: tabId
 		}, function() {
 			chrome.tabs.executeScript(null, {
 				file: 'socket.io-1.0.6.js'
@@ -35,6 +35,10 @@ onGuestSelected = function() {
 			chrome.tabs.executeScript(null, {
 				file: 'guestInjection.js'
 			});
+
+			var bg = chrome.extension.getBackgroundPage();
+			bg.registredPages[tabId] = "guest";
+
 			window.close();
 		});
 
@@ -44,10 +48,10 @@ onGuestSelected = function() {
 
 onHostSelected = function() {
 
-	getCurrentTab(function(id) {
+	getCurrentTab(function(tabId) {
 		chrome.browserAction.setIcon({
 			path: "icon_green.png",
-			tabId: id
+			tabId: tabId
 		}, function() {
 			chrome.tabs.executeScript(null, {
 				file: 'socket.io-1.0.6.js'
@@ -55,6 +59,10 @@ onHostSelected = function() {
 			chrome.tabs.executeScript(null, {
 				file: 'hostInjection.js'
 			});
+
+			var bg = chrome.extension.getBackgroundPage();
+			bg.registredPages[tabId] = "host";
+
 			window.close();
 		});
 	});
