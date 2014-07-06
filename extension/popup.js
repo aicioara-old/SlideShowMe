@@ -3,12 +3,12 @@ hostId.val("12345245235475");
 hostId.click(function() {
 	this.select();
 });
+
 hostId.keydown(function(e) {
 	if (e.keyCode == 67 && e.ctrlKey) {
 		onHostSelected();
 	}
 })
-
 
 var guestId = $('#guest-id');
 var guestButton = $('#guest-button');
@@ -16,7 +16,6 @@ var guestButton = $('#guest-button');
 guestButton.click(function() {
 	onGuestSelected();
 });
-
 
 onGuestSelected = function() {
 
@@ -37,9 +36,7 @@ onGuestSelected = function() {
 
 			window.close();
 		});
-
 	});
-
 }
 
 onHostSelected = function() {
@@ -62,9 +59,7 @@ onHostSelected = function() {
 			window.close();
 		});
 	});
-
 }
-
 
 function getCurrentTab(callback) {
 	chrome.tabs.query(
