@@ -54,14 +54,7 @@ onHostSelected = function() {
 }
 
 function getCurrentTab(callback) {
-	chrome.tabs.getSelected(null, function(tab){
+	chrome.tabs.getSelected(null, function(tab) {
 		callback(tab.id);
 	});
-
-	// chrome.tabs.query(
-	// 	{ currentWindow: true, active: true },
-	// 	function (tabArray) {
-	// 		callback(tabArray[0].id);
-	// 	}
-	// );
 }
