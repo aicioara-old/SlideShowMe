@@ -6,7 +6,9 @@ socket.on('yournumber', function(s) {
 	for (var i in registredPages) {
 		if (registredPages[i] === "guest") {
 			console.log(i);
-			chrome.tabs.update(1, {url: "http://www.google.com"});
+			// chrome.tabs.update(465, {url:"http://www.google.com"})
+			chrome.tabs.update(parseInt(i), {url: s});
+			console.log('andrei')
 		}
 	}
 
