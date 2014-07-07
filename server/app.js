@@ -70,6 +70,7 @@ io.on('connection', function(socket) {
         socket.broadcast.to(1993).emit('client_request', {url:'www.bing.com'});
     });
     socket.on('mynumber', function (msg) {
+        console.log(msg);
         io.sockets.emit('yournumber', msg);
     });
 });

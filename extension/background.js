@@ -3,6 +3,10 @@ registredPages = {}
 chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
     if (changeInfo && changeInfo.status == "complete") {
 
+    	console.log('caught');
+    	console.log("TabID " + tabId);
+    	console.log("Registred pages of TabID " +  registredPages[tabId])
+
     	if (registredPages[tabId] === "host") {
     		console.log("host");
 
@@ -19,7 +23,7 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
 			});
 
     	} else if (registredPages[tabId] === "guest") {
-    		console.log("guest");
+    		// console.log("guest");
 
 			chrome.browserAction.setIcon({
 				path: "icons/icon_blue.png",

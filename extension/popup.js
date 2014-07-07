@@ -1,4 +1,5 @@
 var hostId = $("#host-id");
+var hostButton = $("#host-button");
 hostId.val("12345245235475");
 hostId.click(function() {
 	this.select();
@@ -8,7 +9,10 @@ hostId.keydown(function(e) {
 	if (e.keyCode == 67 && e.ctrlKey) {
 		onHostSelected();
 	}
-})
+});
+hostButton.click(function() {
+	onHostSelected();
+});
 
 var guestId = $('#guest-id');
 var guestButton = $('#guest-button');
