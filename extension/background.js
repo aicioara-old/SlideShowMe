@@ -23,18 +23,17 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
     	// console.log("Registred pages of TabID " +  registredPages[tabId])
 
     	if (registredPages[tabId] === "host") {
+
+    		socket.emit('mynumber', tab.url);
+
+    		// console.log("Andrei" + tab.url);
+
     		// console.log("host");
 
 			chrome.browserAction.setIcon({
 				path: "icons/icon_green.png",
 				tabId: tabId
 			}, function() {
-				chrome.tabs.executeScript(null, {
-					file: 'vendor/socket.io-1.0.6.js'
-				});
-				chrome.tabs.executeScript(null, {
-					file: 'hostInjection.js'
-				});
 			});
 
     	} else if (registredPages[tabId] === "guest") {
@@ -44,12 +43,6 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
 				path: "icons/icon_blue.png",
 				tabId: tabId
 			}, function() {
-				chrome.tabs.executeScript(null, {
-					file: 'vendor/socket.io-1.0.6.js'
-				});
-				chrome.tabs.executeScript(null, {
-					file: 'guestInjection.js'
-				});
 
 			});
 

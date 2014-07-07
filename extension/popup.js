@@ -28,12 +28,6 @@ onGuestSelected = function() {
 			path: "icons/icon_blue.png",
 			tabId: tabId
 		}, function() {
-			chrome.tabs.executeScript(null, {
-				file: 'vendor/socket.io-1.0.6.js'
-			});
-			chrome.tabs.executeScript(null, {
-				file: 'guestInjection.js'
-			});
 
 			var bg = chrome.extension.getBackgroundPage();
 			bg.registredPages[tabId] = "guest";
@@ -50,12 +44,6 @@ onHostSelected = function() {
 			path: "icons/icon_green.png",
 			tabId: tabId
 		}, function() {
-			chrome.tabs.executeScript(null, {
-				file: 'vendor/socket.io-1.0.6.js'
-			});
-			chrome.tabs.executeScript(null, {
-				file: 'hostInjection.js'
-			});
 
 			var bg = chrome.extension.getBackgroundPage();
 			bg.registredPages[tabId] = "host";
