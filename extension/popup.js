@@ -1,25 +1,31 @@
-var hostId = $("#host-id");
-var hostButton = $("#host-button");
-hostId.val("12345245235475");
-hostId.click(function() {
-	this.select();
-});
+bind();
 
-hostId.keydown(function(e) {
-	if (e.keyCode == 67 && e.ctrlKey) {
+function bind() {
+	var hostId = $("#host-id");
+	var hostButton = $("#host-button");
+	hostId.val("12345245235475");
+	hostId.click(function() {
+		this.select();
+	});
+
+	hostId.keydown(function(e) {
+		if (e.keyCode == 67 && e.ctrlKey) {
+			onHostSelected();
+		}
+	});
+	hostButton.click(function() {
 		onHostSelected();
-	}
-});
-hostButton.click(function() {
-	onHostSelected();
-});
+	});
 
-var guestId = $('#guest-id');
-var guestButton = $('#guest-button');
+	var guestId = $('#guest-id');
+	var guestButton = $('#guest-button');
 
-guestButton.click(function() {
-	onGuestSelected();
-});
+	guestButton.click(function() {
+		onGuestSelected();
+	});
+
+}
+
 
 onGuestSelected = function() {
 
