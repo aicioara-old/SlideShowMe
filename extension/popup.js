@@ -35,7 +35,7 @@ onGuestSelected = function() {
 		}, function() {
 
 			var bg = chrome.extension.getBackgroundPage();
-			bg.registredPages[tabId] = "guest";
+			bg.registerPageAsGuest(tabId);
 
 			window.close();
 		});
@@ -51,7 +51,7 @@ onHostSelected = function() {
 		}, function() {
 
 			var bg = chrome.extension.getBackgroundPage();
-			bg.registredPages[tabId] = "host";
+			bg.registerPageAsHost(tabId);
 
 			window.close();
 		});

@@ -1,11 +1,19 @@
-registredPages = {}
+registredPages = {};
+
+function registerPageAsHost(tabId) {
+	registredPages[tabId] = "host"
+}
+
+function registerPageAsGuest(tabId) {
+	registredPages[tabId] = "guest"
+}
 
 var socket = io('http://10.0.0.36:3000');
 
-socket.on('linkBroadcast', function(s) {
-	for (var i in registredPages) {
-		if (registredPages[i] === "guest") {
-			chrome.tabs.update(parseInt(i), {url: s});
+socket.on('linkBroadcast', function(link) {
+	for (var tabId in registredPages) {
+		if (registredPages[tabId] === "guest") {
+			chrome.tabs.update(parseInt(tabId), {url: link});
 		}
 	}
 });
