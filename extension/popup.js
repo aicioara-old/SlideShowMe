@@ -23,7 +23,6 @@ function bind() {
 	guestButton.click(function() {
 		onGuestSelected();
 	});
-
 }
 
 

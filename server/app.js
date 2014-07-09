@@ -69,9 +69,10 @@ io.on('connection', function(socket) {
     socket.on('host_url', function (msg) {
         socket.broadcast.to(1993).emit('client_request', {url:'www.bing.com'});
     });
-    socket.on('mynumber', function (msg) {
+
+    socket.on('hostRequest', function (msg) {
         console.log(msg);
-        io.sockets.emit('yournumber', msg);
+        io.sockets.emit('linkBroadcast', msg);
     });
 });
 
